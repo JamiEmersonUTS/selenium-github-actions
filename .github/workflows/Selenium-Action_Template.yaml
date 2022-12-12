@@ -11,8 +11,6 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: '3.8.10'
-        env:
-          AGENT_TOOLSDIRECTORY: /opt/hostedtoolcache
       - name: Installing package list
         run: apt list --installed    
       - name: Removing previous chrome instances on runner 
