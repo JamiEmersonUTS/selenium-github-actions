@@ -147,9 +147,8 @@ try:
 
     acknowledge = driver.find_element(By.ID, "cbk_ack").click()
 
-
     
-    #submit_application = driver.find_element(By.ID, "myseoi").click()
+    submit_application = driver.find_element(By.ID, "myseoi").click()
 
 finally:
     driver.quit()
