@@ -3,14 +3,16 @@ import webbrowser
 from selenium import webdriver
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.by import By
-import imp
+import importlib
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.service import Service
 
 
 
-driver_location = '/usr/bin/chromedriver'
+
+s = Service('/usr/bin/chromedriver')
 options = webdriver.ChromeOptions()
 options = Options()
 options.headless = True
@@ -18,7 +20,7 @@ options.headless = True
 
 file_path = './CV_Jane_Smith.docx'
 
-driver = webdriver.Chrome(executable_path=driver_location, options=options)
+driver = webdriver.Chrome(service=s, options=options)
 # navigate to eoi webpage
 driver.get('https://project-cad-sandpit.sandpit.itu.uts.edu.au/cad/eoi')
 
@@ -147,8 +149,7 @@ try:
 
     acknowledge = driver.find_element(By.ID, "cbk_ack").click()
 
-    
-    submit_application = driver.find_element(By.ID, "myseoi").click()
+    #submit_application = driver.find_element(By.ID, "myseoi").click()
 
 finally:
     driver.quit()
