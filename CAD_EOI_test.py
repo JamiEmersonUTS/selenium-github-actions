@@ -8,6 +8,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
 
 
 
@@ -15,7 +16,13 @@ from selenium.webdriver.chrome.service import Service
 s = Service('/usr/bin/chromedriver')
 options = webdriver.ChromeOptions()
 options = Options()
-options.headless = True
+#options.headless = True
+options.add_argument("--ignore-certificate-errors")
+options.add_argument("--incognito")
+options.add_argument("--headless")
+options.add_argument("--window-size=1920,1080")
+
+
 
 
 file_path = './CV_Jane_Smith.docx'
