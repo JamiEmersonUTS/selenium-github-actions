@@ -123,7 +123,7 @@ try:
     next_button3 = driver.find_element(
         By.XPATH, '//*[@id="frm_se"]/div[24]/div[2]/button').click()
 
-    choose_file = driver.find_element(By.ID, "file_up").send_keys('https://github.com/JamiEmersonUTS/selenium-github-actions/blob/main/CV_Jane_Smith.docx')
+    choose_file = driver.find_element(By.ID, "file_up").send_keys('CV_Jane_Smith.docx')
 
     supporting_type = Select(driver.find_element(By.ID, 'doc_type'))
     supporting_type.select_by_visible_text('A Resume or CV')
