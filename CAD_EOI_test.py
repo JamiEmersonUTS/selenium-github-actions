@@ -25,7 +25,7 @@ options.add_argument("--window-size=1920,1080")
 
 
 
-file_path = 'CV_Jane_Smith.docx'
+file_path = 'https://github.com/JamiEmersonUTS/selenium-github-actions/blob/main/CV_Jane_Smith.docx'
 
 driver = webdriver.Chrome(service=s, options=options)
 # navigate to eoi webpage
