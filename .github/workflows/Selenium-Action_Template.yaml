@@ -10,7 +10,7 @@ jobs:
       - name: Setting up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.9'
+          python-version: 3.8
       - name: Installing package list
         run: apt list --installed    
       - name: Removing previous chrome instances on runner 
@@ -24,7 +24,8 @@ jobs:
 
       - name: Running the Python script
         run: python CAD_EOI_test.py
-        
+       
+       
       - name: Commit and Push The Results From Python Selenium Action
         run: |
          git config --global user.name "github-actions[bot]"
