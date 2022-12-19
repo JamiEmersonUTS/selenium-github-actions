@@ -9,20 +9,24 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
+import os
 
+
+# Get the absolute path to the script's directory
+script_dir = os.path.dirname(os.path.realpath(__file__))
+
+# Construct the absolute file path by joining the script's directory with the relative file path
+file_path = os.path.join(script_dir, 'files', 'CV_Jane_Smith.docx')
 
 
 
 s = Service('/usr/bin/chromedriver')
 options = webdriver.ChromeOptions()
 options = Options()
-#options.headless = True
 options.add_argument("--ignore-certificate-errors")
 options.add_argument("--incognito")
 options.add_argument("--headless")
 options.add_argument("--window-size=1920,1080")
-
-
 
 
 driver = webdriver.Chrome(service=s, options=options)
