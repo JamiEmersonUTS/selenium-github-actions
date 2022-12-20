@@ -1,15 +1,12 @@
-import email
-import webbrowser
 from selenium import webdriver
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.by import By
-import importlib
-from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 import os
+from selenium import webdriver
+
 
 
 # Get the absolute path to the script's directory
@@ -159,6 +156,15 @@ try:
     acknowledge = driver.find_element(By.ID, "cbk_ack").click()
 
     #submit_application = driver.find_element(By.ID, "myseoi").click()
+    
+
+    if driver.current_url.startswith('https://'):
+        print("The website has a valid certificate.")
+    else:
+        print("The website does not have a valid certificate.")
+
+    url = driver.current_url
+    print(url)
 
 finally:
     driver.quit()
