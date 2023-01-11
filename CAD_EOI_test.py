@@ -8,13 +8,11 @@ import os
 from selenium import webdriver
 
 
-
 # Get the absolute path to the script's directory
 script_dir = os.path.dirname(os.path.realpath(__file__))
 
 # Construct the absolute file path by joining the script's directory with the relative file path
 file_path = os.path.join(script_dir, 'files', 'CV_Jane_Smith.docx')
-
 
 
 s = Service('/usr/bin/chromedriver')
@@ -31,8 +29,6 @@ driver = webdriver.Chrome(service=s, options=options)
 driver.get('https://project-cad-sandpit.sandpit.itu.uts.edu.au/cad/eoi')
 
 try:
-
-
     # Click Next button
     next_button = driver.find_element(By.ID, "but_nextnext").click()
 
@@ -158,13 +154,10 @@ try:
     #submit_application = driver.find_element(By.ID, "myseoi").click()
     
 
-    if driver.current_url.startswith('https://'):
-        print("The website has a valid certificate.")
-    else:
-        print("The website does not have a valid certificate.")
-
-    url = driver.current_url
-    print(url)
+    assert driver.current_url.startswith('https://')
+      #  print("The website has a valid certificate.")
+    #else:
+        #print("The website does not have a valid certificate.")
 
 finally:
     driver.quit()
