@@ -24,5 +24,14 @@ jobs:
 
       - name: Running the Python script
         run: python CAD_EOI_test.py
-       
+
+
+      - name: Send email notification on failure
+        if: failure()
+        uses: actions/email@v1
+        with:
+          to: jami.emerson@uts.edu.au
+          subject: "Daily Workflow Failed"
+          body: "The daily workflow has failed. Please check the Actions tab for more details."
+
  
