@@ -29,8 +29,6 @@ options.add_argument("--window-size=1920,1080")
 driver = webdriver.Chrome(service=s, options=options)
 # navigate to eoi webpage
 driver.get('https://project-cad-sandpit.sandpit.itu.uts.edu.au/cad/eoi')
-driver.get('www.google.com')
-
 
 try:
 
