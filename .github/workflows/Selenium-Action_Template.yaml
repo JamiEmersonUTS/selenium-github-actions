@@ -1,7 +1,6 @@
 name: Run Selenium On GitHub Action
 
 on:
-  workflow_dispatch: # Manual trigger
   repository_dispatch: # Triggered by another workflow
     types: [on-demand-test] # Match the event_type from workflow_01
 
