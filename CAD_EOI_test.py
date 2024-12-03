@@ -28,7 +28,7 @@ options.add_argument("--window-size=1920,1080")
 
 driver = webdriver.Chrome(service=s, options=options)
 # navigate to eoi webpage
-driver.get('https://cad-business-sandpit.itu.uts.edu.au/cad/eoi')
+driver.get('https://cad.uts.edu.au/bus/eoi')
 
 try:
 
